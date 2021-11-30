@@ -1,7 +1,9 @@
 import * as React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
+import { Counter } from "./features/counter/Counter";
+import MacroDisplay from "./features/macro/MacroDisplay";
 
 const App = () => {
   return (
@@ -21,31 +23,23 @@ const App = () => {
 const Home = () => {
   return (
     <div>
+      <Counter />
+      <MacroDisplay />
       <p>
-        <button class="button button-s" onClick={onClickButton1} type="button">
-          Button 1
-        </button>
-        <button class="button button-s" onClick={onClickButton2} type="button">
-          Button 2
-        </button>
-        <button class="button button-s" onClick={onClickButton3} type="button">
-          Button 3
-        </button>
+        <Link to="/button3">Button 3</Link>
       </p>
     </div>
   );
 };
 
 function Button3() {
-  console.log("button3");
   return (
     <div>
-      <button class="button button-s" onClick={onClickButton4} type="button">
-        Button 4
-      </button>
-      <button class="button button-s" onClick={onClickButton5} type="button">
-        Button 5
-      </button>
+      <Counter />
+      <MacroDisplay />
+      <p>
+        <Link to="/">Home</Link>
+      </p>
     </div>
   );
 }
@@ -76,7 +70,7 @@ const onClickButton2 = () => {
 
 const onClickButton3 = () => {
   console.log("button3");
-  return window.open("/Button3", "_blank");
+  return window.open("/Button3");
 };
 const onClickButton4 = () => {
   console.log("button4");
