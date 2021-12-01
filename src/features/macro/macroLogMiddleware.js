@@ -1,9 +1,9 @@
-import { addHistory, selectIsActive } from "./macroSlice";
+import { addHistory } from "./macroSlice";
 
 const macroLogMiddleware = storeAPI => next => action => {
-  const isActive = selectIsActive(storeAPI.getState());
+  const isNotMacroAction = action.type && !action.type.startsWith("macro");
 
-  if (action.type && !action.type.startsWith("macro") && isActive) {
+  if (isNotMacroAction) {
     const windowUrl = window.location.href;
 
     storeAPI.dispatch(addHistory({
