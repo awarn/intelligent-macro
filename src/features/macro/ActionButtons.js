@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { batch, useDispatch, useSelector } from "react-redux";
-import { record, save, selectMacros } from "./macroSlice";
+import { selectMacros } from "./macroSlice";
 import styles from "./Macro.module.css";
 
 const mapSeries = async (iterable, action) => {
@@ -15,8 +15,8 @@ const ActionButtons = () => {
 
   const onRadioClick = () => {
     setStart(!start);
-    if (!start) dispatch(record());
-    //if (start) dispatch(save());
+    // if (!start) dispatch(record());
+    // if (start) dispatch(save());
   };
 
   return (

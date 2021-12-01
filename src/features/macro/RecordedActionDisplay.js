@@ -31,6 +31,8 @@ const RecordedActionDisplay = () => {
         </tr>
         {history
           .filter((hist) => hist.url === windowUrl)
+          .reverse()
+          .slice(0, 10)
           .map((hist, index) => {
             const name = getName(hist.action);
             return (
