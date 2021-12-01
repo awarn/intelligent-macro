@@ -1,0 +1,21 @@
+.label {
+  color: rgb(112, 76, 182);
+  font-size: 25px;
+}
+
+.table {
+  table-layout: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid black;
+}
+.thead {
+  width: 30%;
+}
+
+.th,
+.td {
+  border: 1px solid black;
+}

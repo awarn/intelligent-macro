@@ -3,19 +3,29 @@ import { Routes, Route, Link } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
 import { Counter } from "./features/counter/Counter";
+import AcionButtons from "./features/macro/ActionButtons";
 import MacroDisplay from "./features/macro/MacroDisplay";
+import RecordedActionDisplay from "./features/macro/RecordedActionDisplay";
 
 const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/button3" element={<Button3 />}></Route>
-          <Route path="/button4" element={<Button4 />}></Route>
-        </Routes>
-      </header>
+      <div className="macro">
+        <h4>Recorded Actions</h4>
+        <RecordedActionDisplay />
+        <h4>Found Macros</h4>
+        <MacroDisplay />
+      </div>
+      <div className="action">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/otherPage" element={<OtherPage />}></Route>
+            <Route path="/button4" element={<Button4 />}></Route>
+          </Routes>
+        </header>
+      </div>
     </div>
   );
 };
@@ -24,22 +34,22 @@ const Home = () => {
   return (
     <div>
       <Counter />
-      <MacroDisplay />
       <p>
-        <Link to="/button3">Button 3</Link>
+        <Link to="/otherPage">Other Page</Link>
       </p>
     </div>
   );
 };
 
-function Button3() {
+function OtherPage() {
   return (
     <div>
-      <Counter />
-      <MacroDisplay />
-      <p>
-        <Link to="/">Home</Link>
-      </p>
+      <div>
+        <Counter />
+        <p>
+          <Link to="/">Home</Link>
+        </p>
+      </div>
     </div>
   );
 }
