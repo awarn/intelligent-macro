@@ -11,15 +11,12 @@ const mapSeries = async (iterable, action) => {
 
 const RecordedActionDisplay = () => {
   const history = useSelector(selectHistory);
-  console.log(history);
 
   const windowUrl = window.location.href;
 
   const getName = (action) => {
     let name = "";
-    if (!action.type.includes("fetchCount/pending")) {
-      name = name.concat(action.type + "  " + action.payload + " ");
-    }
+    name = name.concat(action.type + "  " + action.payload + " ");
     return name;
   };
 

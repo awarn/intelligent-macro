@@ -28,10 +28,10 @@ const MacroDisplay = () => {
 
 	const getName = (actions) => {
 		let name = "";
-		actions.forEach((a) => {
+		actions.slice().reverse().forEach((a) => {
 			if (!a.action.type.includes("fetchCount/pending")) {
 				name = name.concat(
-					a.action.type + "  " + a.action.payload + " "
+					a.action.type + "_" + a.action.payload + " "
 				);
 			}
 		});
