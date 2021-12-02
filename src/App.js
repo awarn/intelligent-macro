@@ -10,12 +10,6 @@ import RecordedActionDisplay from "./features/macro/RecordedActionDisplay";
 const App = () => {
   return (
     <div className="App">
-      <div className="macro">
-        <h4>Recorded Actions</h4>
-        <RecordedActionDisplay />
-        <h4>Found Macros</h4>
-        <MacroDisplay />
-      </div>
       <div className="action">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
@@ -33,6 +27,12 @@ const App = () => {
 const Home = () => {
   return (
     <div>
+      <div className="macro">
+        <h4>Recorded Actions</h4>
+        <RecordedActionDisplay />
+        <h4>Found Macros</h4>
+        <MacroDisplay />
+      </div>
       <Counter />
       <p>
         <Link to="/otherPage">Other Page</Link>
@@ -44,6 +44,12 @@ const Home = () => {
 function OtherPage() {
   return (
     <div>
+      <div className="macro">
+        <h4>Recorded Actions</h4>
+        <RecordedActionDisplay />
+        <h4>Found Macros</h4>
+        <MacroDisplay />
+      </div>
       <div>
         <Counter />
         <p>
